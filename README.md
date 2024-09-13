@@ -1,11 +1,23 @@
 # python-docx
 
-*python-docx* is a Python library for reading, creating, and updating Microsoft Word 2007+ (.docx) files.
+_python-docx_ is a Python library for reading, creating, and updating Microsoft Word 2007+ (.docx) files.
+
+This fork has been updated with [these](https://github.com/python-openxml/python-docx/compare/master...jdthorpe:python-docx:master) changes to make `python-docx` compatible with [`Simplify-Docx`](https://github.com/microsoft/Simplify-Docx).
 
 ## Installation
 
+Install directly from git::
+
 ```
-pip install python-docx
+pip install git+https://github.com/dalmia/python-docx.git
+```
+
+Or you can install locally after cloning the repository:
+
+```
+git clone git@github.com:dalmia/python-docx.git
+cd python-docx
+pip install .
 ```
 
 ## Example

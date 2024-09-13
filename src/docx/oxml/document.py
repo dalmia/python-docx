@@ -5,7 +5,9 @@ from __future__ import annotations
 from typing import TYPE_CHECKING, Callable, List
 
 from docx.oxml.section import CT_SectPr
-from docx.oxml.xmlchemy import BaseOxmlElement, ZeroOrMore, ZeroOrOne
+from docx.oxml.xmlchemy import BaseOxmlElement, ZeroOrMore, ZeroOrOne, RequiredAttribute
+from .simpletypes import XsdString
+
 
 if TYPE_CHECKING:
     from docx.oxml.table import CT_Tbl
@@ -86,3 +88,8 @@ class CT_Body(BaseOxmlElement):
         other "wrapper" element will not be included.
         """
         return self.xpath("./w:p | ./w:tbl")
+
+
+class CT_altChunk(BaseOxmlElement):
+    """`w:altChunk` element"""
+    rId = RequiredAttribute('r:id', XsdString)

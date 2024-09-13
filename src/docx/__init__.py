@@ -28,12 +28,15 @@ from docx.opc.parts.coreprops import CorePropertiesPart
 from docx.parts.document import DocumentPart
 from docx.parts.hdrftr import FooterPart, HeaderPart
 from docx.parts.image import ImagePart
+from docx.parts.altchunk import AltchunkPart
 from docx.parts.numbering import NumberingPart
 from docx.parts.settings import SettingsPart
 from docx.parts.styles import StylesPart
 
 
 def part_class_selector(content_type: str, reltype: str) -> Type[Part] | None:
+    if reltype == RT.A_F_CHUNK:
+        return AltchunkPart
     if reltype == RT.IMAGE:
         return ImagePart
     return None
